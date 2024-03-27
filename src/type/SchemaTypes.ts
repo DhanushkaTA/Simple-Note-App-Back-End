@@ -6,3 +6,9 @@ export interface NoteInterface extends mongoose.Document{
     description:string,
     date:Date
 }
+
+export interface UserInterface extends mongoose.Document{
+    name:string,
+    email:string,
+    password:string
+}
