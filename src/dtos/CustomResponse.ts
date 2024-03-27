@@ -1,4 +1,4 @@
-export class CustomerResponse{
+export class CustomResponse {
 
     private _status :number;
     private _message :string;

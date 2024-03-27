@@ -7,10 +7,10 @@ router.post('/save', NoteController.createNote) // note/save
 
 router.put('/update', NoteController.updateNote) // note/update
 
-router.delete('/delete/:noteId', NoteController.createNote) // note/save
+router.delete('/delete/:noteId', NoteController.deleteNote) // note/save
 
-router.get('/get/note', NoteController.createNote) // note/get/note?id=
+router.get('/get/note', NoteController.viewNote) // note/get/note?id=
 
-router.get('/get/all', NoteController.createNote) // note/get/all
+router.get('/get/all', NoteController.viewAllNotes) // note/get/all
 
 export default router;
