@@ -1,6 +1,6 @@
 import {CustomResponse} from "../dtos/CustomResponse";
 import NoteModel from "../models/NoteModel";
-import {NoteInterface} from "../type/SchemaTypes";
+import {NoteInterface, UserInterface} from "../type/SchemaTypes";
 
 export const createNote = async (req : any, res:any) => {
 
@@ -152,7 +152,7 @@ export const viewAllNotes = async (req : any, res:any) => {
         // let totalPages :number = Math.ceil(documentCount / size);
 
         // let list = await NoteModel.find().limit(size).skip(size * (page - 1));
-        let list = await NoteModel.find();
+        let list: NoteInterface[] = await NoteModel.find({user:res.tokenData.user.email});
 
         res.status(200).send(
             new CustomResponse(
