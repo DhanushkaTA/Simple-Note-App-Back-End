@@ -144,6 +144,25 @@ export const viewAllNotes = async (req : any, res:any) => {
 
     try {
 
+        // let query_string :any = req.query;
+        // let size :number = query_string.size;
+        // let page :number = query_string.page;
+        //
+        // let documentCount : number = await NoteModel.countDocuments();
+        // let totalPages :number = Math.ceil(documentCount / size);
+
+        // let list = await NoteModel.find().limit(size).skip(size * (page - 1));
+        let list = await NoteModel.find();
+
+        res.status(200).send(
+            new CustomResponse(
+                200,
+                "Notes found successfully.",
+                list
+                // totalPages
+            )
+        )
+
     }catch (error){
         res.status(500).send(
             new CustomResponse(500,`Error : ${error}`)
