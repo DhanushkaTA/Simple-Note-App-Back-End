@@ -121,6 +121,17 @@ export const viewNote = async (req : any, res:any) => {
 
     try {
 
+        let query_string :any = req.query;
+        let note_id = query_string.id;
+
+        let note_by_id : NoteInterface | null = await NoteModel.findOne({_id:note_id});
+
+        if (note_by_id){
+            res.status(200).send(
+                new CustomResponse(200,`Note found!`, note_by_id)
+            )
+        }
+
     }catch (error){
         res.status(500).send(
             new CustomResponse(500,`Error : ${error}`)
