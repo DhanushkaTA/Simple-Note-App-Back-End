@@ -111,4 +111,14 @@ const generateToken = (user: UserInterface, res :express.Response) => {
 
 export const deleteUser = async (req :any, res :any) => {
 
+    try {
+
+
+
+    }catch (error){
+        res.status(500).send(
+            new CustomResponse(500,`Error : ${error}`)
+        )
+    }
+
 }
