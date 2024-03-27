@@ -23,6 +23,8 @@ export const createUser = async (req : any, res:any) => {
 
              await userModel.save()
                  .then( success => {
+                     success.password="";
+
                      res.status(200).send(
                          new CustomResponse(200, "User saved successfully!", success)
                      )
