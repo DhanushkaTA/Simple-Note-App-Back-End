@@ -113,7 +113,25 @@ export const deleteUser = async (req :any, res :any) => {
 
     try {
 
+        let email = res.tokenData.user.email;
 
+        let user_by_email = await UserModel.findOne({email:email});
+
+        if (user_by_email) {
+
+            await UserModel.deleteOne({email:email})
+                .then( success => {
+                    res.status(200).send(
+                        new CustomResponse(200, "User delete successfully!")
+                    )
+                })
+                .catch(error => {
+                    res.status(500).send(
+                        new CustomResponse(500,`Error : ${error}`)
+                    )
+                })
+
+        }
 
     }catch (error){
         res.status(500).send(
