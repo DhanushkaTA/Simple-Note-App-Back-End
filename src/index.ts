@@ -6,6 +6,7 @@ import bodyParser from "body-parser";
 import cors from "cors"
 import * as mongoose from "mongoose";
 import * as process from "process";
+import NoteRoutes from "./routes/NoteRoutes";
 
 let app = express();
 
@@ -22,6 +23,9 @@ mongoose.connect(process.env.MONGO_URL as string).then( r => {
 }).catch( error => {
     console.log(`DB Connection Error : ${error}`)
 });
+
+
+app.use('/note',NoteRoutes)
 
 app.listen(9001, () => {
     console.log("Server start on port 9001")

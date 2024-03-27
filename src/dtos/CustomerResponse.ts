@@ -7,7 +7,7 @@ export class CustomerResponse{
     private _totalPages? :number;
 
 
-    constructor(status: number, message: string, data: any, totalRecodes: number, totalPages: number) {
+    constructor(status: number, message: string, data?: any, totalRecodes?: number, totalPages?: number) {
         this._status = status;
         this._message = message;
         this._data = data;

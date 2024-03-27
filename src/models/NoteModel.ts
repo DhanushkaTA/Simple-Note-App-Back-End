@@ -3,7 +3,7 @@ import * as SchemaTypes from '../type/SchemaTypes'
 import {Schema} from "mongoose";
 
 let noteSchema = new mongoose.Schema<SchemaTypes.NoteInterface>({
-    id:{type:String, required: true},
+    user:{type:String, required: true},
     title:{type:String, required:true},
     description:{type:String},
     date:{type:Date, required: true}
