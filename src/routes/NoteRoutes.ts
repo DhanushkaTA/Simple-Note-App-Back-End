@@ -10,7 +10,7 @@ router.put('/update', VerifyToken.verifyToken, NoteController.updateNote) // not
 
 router.delete('/delete/:noteId', VerifyToken.verifyToken, NoteController.deleteNote) // note/save
 
-router.get('/get/note', VerifyToken.verifyToken, NoteController.viewNote) // note/get/note?id=
+router.get('/get/note', VerifyToken.verifyToken, NoteController.viewNote) // note/get/note?title=
 
 router.get('/get/all', VerifyToken.verifyToken, NoteController.viewAllNotes) // note/get/all
 

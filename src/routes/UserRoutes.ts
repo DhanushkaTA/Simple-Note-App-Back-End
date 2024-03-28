@@ -6,7 +6,7 @@ let router = express.Router();
 
 router.post('/save', UserController.createUser)
 
-router.get('/auth', UserController.authUser)
+router.post('/auth', UserController.authUser)
 
 router.delete('/delete',VerifyToken.verifyToken, UserController.deleteUser)
 
